@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>吉林省旅游指南</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <button onclick="showCity('changchun',event)">长春市</button>
+        <button onclick="showCity('jilin',event)">吉林市</button>
+        <button onclick="showCity('yanbian',event)">延边州</button>
+        <!-- <button onclick="showCity('tonghua',event)">通化市</button>
+        <button onclick="showCity('songyuan',event)">松原市</button>
+        <button onclick="showCity('baicheng',event)">白城市</button>
+        <button onclick="showCity('siping',event)">四平市</button>
+        <button onclick="showCity('liaoyuan',event)">辽源市</button>
+        <button onclick="showCity('baishan',event)">白山市</button> -->
+    </div>
+
+    <div class="container">
+        <div class="sidebar" id="city-info">
+            <h2>地区介绍</h2>
+            <div id="city-description">
+                <h3></h3>
+                <p></p>
+            </div>
+            <div class="video">
+                <video src="" controls></video>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="pear" id="pear">
+                <img src="./assets/ai-dongli.gif" alt="">
+                <audio src="./assets/audio/冻梨.mp3"></audio>
+            </div>
+            <div class="tabs">
+                <button onclick="showTab('food',event)">特色美食</button>
+                <button onclick="showTab('attractions',event)">旅游景点</button>
+                <button onclick="showTab('route',event)">路线规划</button>
+                <button onclick="showTab('budget',event)">预算计算</button>
+            </div>
+
+            <div id="food" class="tab-content active-tab">
+                <!-- 美食内容动态加载 -->
+            </div>
+
+            <div id="attractions" class="tab-content">
+                <!-- 景点内容动态加载 -->
+            </div>
+
+            <div id="route" class="tab-content">
+                <!-- 路线内容动态加载 -->
+            </div>
+
+            <div id="budget" class="tab-content">
+                <div class="budget-calculator">
+                    <h3>预算计算器</h3>
+                    <label>旅行天数：<input type="number" id="days" min="1" value="3"></label>
+                    <button onclick="calculateBudget()">计算预算</button>
+                    <p id="budget-result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/cityData.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>吉林省旅游指南</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <button onclick="showCity('changchun',event)">长春市</button>
+        <button onclick="showCity('jilin',event)">吉林市</button>
+        <button onclick="showCity('yanbian',event)">延边州</button>
+        <!-- <button onclick="showCity('tonghua',event)">通化市</button>
+        <button onclick="showCity('songyuan',event)">松原市</button>
+        <button onclick="showCity('baicheng',event)">白城市</button>
+        <button onclick="showCity('siping',event)">四平市</button>
+        <button onclick="showCity('liaoyuan',event)">辽源市</button>
+        <button onclick="showCity('baishan',event)">白山市</button> -->
+    </div>
+
+    <div class="container">
+        <div class="sidebar" id="city-info">
+            <h2>地区介绍</h2>
+            <div id="city-description">
+                <h3></h3>
+                <p></p>
+            </div>
+            <div class="video">
+                <video src="" controls></video>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="pear" id="pear">
+                <img src="./assets/ai-dongli.gif" alt="">
+                <audio src="./assets/audio/冻梨.mp3"></audio>
+            </div>
+            <div class="tabs">
+                <button onclick="showTab('food',event)">特色美食</button>
+                <button onclick="showTab('attractions',event)">旅游景点</button>
+                <button onclick="showTab('route',event)">路线规划</button>
+                <button onclick="showTab('budget',event)">预算计算</button>
+            </div>
+
+            <div id="food" class="tab-content active-tab">
+                <!-- 美食内容动态加载 -->
+            </div>
+
+            <div id="attractions" class="tab-content">
+                <!-- 景点内容动态加载 -->
+            </div>
+
+            <div id="route" class="tab-content">
+                <!-- 路线内容动态加载 -->
+            </div>
+
+            <div id="budget" class="tab-content">
+                <div class="budget-calculator">
+                    <h3>预算计算器</h3>
+                    <label>旅行天数：<input type="number" id="days" min="1" value="3"></label>
+                    <button onclick="calculateBudget()">计算预算</button>
+                    <p id="budget-result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/cityData.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

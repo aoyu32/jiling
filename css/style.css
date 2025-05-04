@@ -1,0 +1,818 @@
+<<<<<<< HEAD
+/* 定义主题颜色变量 */
+:root {
+    --primary-color: #8e6c88;
+    /* 柔和紫色 */
+    --secondary-color: #6b8e8a;
+    /* 柔和蓝绿色 */
+    --accent-color: #e8b5b5;
+    /* 柔和粉色 */
+    --light-bg: #f9f5f9;
+    /* 浅紫色背景 */
+    --text-color: #5a4a5a;
+    /* 深紫色文字 */
+    --light-text: #7d7d7d;
+    /* 浅灰色文字 */
+}
+
+/* 全局样式 */
+body {
+    font-family: "微软雅黑", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 导航栏 */
+.nav {
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 导航按钮 */
+.nav button {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.nav button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 导航按钮激活状态 */
+.nav button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(142, 108, 136, 0.3);
+    transform: scale(1.05);
+}
+
+/* 主容器网格布局 */
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+}
+
+/* 侧边栏 */
+.sidebar {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 主内容区域 */
+.content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* pear 图片 */
+.content .pear {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 100px;
+    transform: scaleX(-1);
+    display: none;
+}
+
+/* 标签导航 */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* 标签按钮 */
+.tabs button {
+    background-color: white;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 8px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.tabs button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* 标签按钮激活状态 */
+.tabs button.active {
+    background-color: var(--secondary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(107, 142, 138, 0.3);
+    transform: scale(1.05);
+}
+
+/* 标签内容 */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.active-tab {
+    display: block;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 24px;
+}
+
+h3 {
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+h4 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* 预算计算器 */
+.budget-calculator {
+    background-color: #f8f3f8;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.budget-calculator label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.budget-calculator input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-left: 10px;
+    width: 60px;
+}
+
+.budget-calculator button {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.budget-calculator button:hover {
+    background-color: #d8a5a5;
+    transform: translateY(-2px);
+}
+
+#budget-result {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+.food-item,
+.attraction {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.food-item:last-child,
+.attraction:last-child {
+    border-bottom: none;
+}
+
+.food-item video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.attraction video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+/* 城市介绍视频 */
+.video {
+    margin-top: 20px;
+}
+
+.video video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 音频播放状态样式 */
+.playing {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.playing::after {
+    content: "🔊";
+    position: absolute;
+    right: 0px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* 可点击的音频标题样式 */
+.audio-title:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* 城市标题样式 */
+#city-info h3 {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#city-info h3:hover {
+    color: var(--primary-color);
+}
+
+/* 响应式设计：小屏幕 */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        /* 单列布局 */
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav button {
+        width: 80%;
+        margin: 5px 0;
+    }
+}
+
+/* 路线规划 */
+.route-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed var(--accent-color);
+}
+
+.route-tips {
+    background-color: #f5e9f5;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* 时间线 */
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-content {
+    flex-grow: 1;
+    background-color: #faf5fa;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.day-tag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.day-content {
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.day-content:before {
+    content: "→";
+    color: var(--accent-color);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* 响应式时间线 */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+=======
+/* 定义主题颜色变量 */
+:root {
+    --primary-color: #8e6c88;
+    /* 柔和紫色 */
+    --secondary-color: #6b8e8a;
+    /* 柔和蓝绿色 */
+    --accent-color: #e8b5b5;
+    /* 柔和粉色 */
+    --light-bg: #f9f5f9;
+    /* 浅紫色背景 */
+    --text-color: #5a4a5a;
+    /* 深紫色文字 */
+    --light-text: #7d7d7d;
+    /* 浅灰色文字 */
+}
+
+/* 全局样式 */
+body {
+    font-family: "微软雅黑", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 导航栏 */
+.nav {
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 导航按钮 */
+.nav button {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.nav button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 导航按钮激活状态 */
+.nav button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(142, 108, 136, 0.3);
+    transform: scale(1.05);
+}
+
+/* 主容器网格布局 */
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+}
+
+/* 侧边栏 */
+.sidebar {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 主内容区域 */
+.content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* pear 图片 */
+.content .pear {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 100px;
+    transform: scaleX(-1);
+    display: none;
+}
+
+/* 标签导航 */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* 标签按钮 */
+.tabs button {
+    background-color: white;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 8px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.tabs button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* 标签按钮激活状态 */
+.tabs button.active {
+    background-color: var(--secondary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(107, 142, 138, 0.3);
+    transform: scale(1.05);
+}
+
+/* 标签内容 */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.active-tab {
+    display: block;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 24px;
+}
+
+h3 {
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+h4 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* 预算计算器 */
+.budget-calculator {
+    background-color: #f8f3f8;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.budget-calculator label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.budget-calculator input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-left: 10px;
+    width: 60px;
+}
+
+.budget-calculator button {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.budget-calculator button:hover {
+    background-color: #d8a5a5;
+    transform: translateY(-2px);
+}
+
+#budget-result {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+.food-item,
+.attraction {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.food-item:last-child,
+.attraction:last-child {
+    border-bottom: none;
+}
+
+.food-item video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.attraction video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+/* 城市介绍视频 */
+.video {
+    margin-top: 20px;
+}
+
+.video video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 音频播放状态样式 */
+.playing {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.playing::after {
+    content: "🔊";
+    position: absolute;
+    right: 0px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* 可点击的音频标题样式 */
+.audio-title:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* 城市标题样式 */
+#city-info h3 {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#city-info h3:hover {
+    color: var(--primary-color);
+}
+
+/* 响应式设计：小屏幕 */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        /* 单列布局 */
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav button {
+        width: 80%;
+        margin: 5px 0;
+    }
+}
+
+/* 路线规划 */
+.route-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed var(--accent-color);
+}
+
+.route-tips {
+    background-color: #f5e9f5;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* 时间线 */
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-content {
+    flex-grow: 1;
+    background-color: #faf5fa;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.day-tag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.day-content {
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.day-content:before {
+    content: "→";
+    color: var(--accent-color);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* 响应式时间线 */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+>>>>>>> aedcd34eddaa90ac82f3751edfa26a900dce3eef
+}
