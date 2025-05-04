@@ -1,0 +1,142 @@
+/* Speech bubble container */
+.speech-bubble {
+    position: absolute;
+    top: -60px;
+    /* Position above the GIF */
+    right: 20px;
+    /* Align with .pear's right position */
+    display: inline-block;
+    /* Adapts width to content */
+    padding: 12px 20px;
+    background-color: white;
+    /* Inner bubble background */
+    border: 2px solid var(--primary-color);
+    /* Inner border */
+    border-radius: 0;
+    /* Sharp corners to match image */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    max-width: 200px;
+    /* Prevents overly wide bubbles */
+    font-size: 14px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    /* Smooth transitions for hover effects */
+    z-index: 1;
+    /* Ensure bubble is above other elements */
+    position: relative;
+    /* Context for pseudo-elements and pointer */
+}
+
+/* Outer frame for enhanced two-layer effect */
+.speech-bubble-bg {
+    content: '';
+    position: absolute;
+    top: -8px;
+    /* Increased offset for clearer layering */
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background-color: rgba(142, 108, 136, 0.1);
+    /* Light tint of primary-color for contrast */
+    border: 2px solid var(--primary-color);
+    /* Outer border */
+    border-radius: 0;
+    /* Sharp corners */
+    z-index: -1;
+    /* Behind main bubble */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow for outer layer */
+}
+
+/* Right-angle triangle pointer on bottom-left */
+.speech-bubble-pointer {
+    position: absolute;
+    bottom: -14px;
+    /* Adjust based on pointer size */
+    left: 15px;
+    /* Position on the left side */
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: var(--primary-color);
+    /* Matches inner border */
+    border-left-color: var(--primary-color);
+    transform: rotate(-45deg);
+    /* Creates right-angle effect */
+    z-index: 1;
+}
+
+/* English quotation marks */
+.speech-bubble::before,
+.speech-bubble::after {
+    position: absolute;
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.speech-bubble::before {
+    content: '"';
+    top: -4px;
+    left: 4px;
+}
+
+.speech-bubble::after {
+    content: '"';
+    bottom: -4px;
+    right: 4px;
+}
+
+/* Ensure text inside bubble is centered and wraps properly */
+.speech-bubble span {
+    display: block;
+    white-space: normal;
+    /* Allows text wrapping */
+    line-height: 1.5;
+}
+
+/* Hover effect for interactivity */
+.speech-bubble:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .speech-bubble {
+        max-width: 150px;
+        font-size: 12px;
+        padding: 10px 15px;
+        top: -50px;
+        right: 15px;
+    }
+
+    .speech-bubble-bg {
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+    }
+
+    .speech-bubble-pointer {
+        bottom: -12px;
+        left: 10px;
+        border-width: 8px;
+    }
+
+    .speech-bubble::before,
+    .speech-bubble::after {
+        font-size: 16px;
+    }
+}
+
+/* Ensure .pear (GIF) layout is unaffected */
+.pear {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 100px;
+    display: none;
+    /* Matches your original display setting */
+}

@@ -89,14 +89,14 @@ body {
     position: relative;
 }
 
-/* pear 图片 */
+/* 冻梨容器 - 移除镜像 */
 .content .pear {
     position: absolute;
     top: 0;
     right: 20px;
     width: 100px;
-    transform: scaleX(-1);
     display: none;
+    /* 初始隐藏，JS会控制显示 */
 }
 
 /* 标签导航 */

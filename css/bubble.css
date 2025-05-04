@@ -1,0 +1,86 @@
+/* 气泡样式 - 自适应宽度 */
+.speech-bubble {
+    position: absolute;
+    top: 30%;
+    right: 125px;
+    transform: translateY(-50%);
+    max-width: 200px;
+    /* 最大宽度限制 */
+    z-index: 100;
+    animation: bubbleFloat 2s ease-in-out infinite;
+    pointer-events: none;
+    /* 允许点击穿透到下面的元素 */
+}
+
+/* 气泡背景 */
+.speech-bubble-bg {
+    background-color: white;
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--accent-color);
+    white-space: nowrap;
+    /* 保持单行 */
+    display: inline-block;
+    /* 宽度自适应内容 */
+}
+
+/* 气泡指针 - 右上角连接 */
+.speech-bubble-pointer {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    right: -12px;
+    background-color: transparent;
+    border-top: 2px solid var(--accent-color);
+    /* 上边框与气泡连接 */
+    border-right: 2px solid var(--accent-color);
+    /* 右边框 */
+    /* 创建三角形效果 */
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+}
+
+/* 悬浮效果 */
+.pear:hover .speech-bubble {
+    animation: bubblePulse 0.5s ease infinite alternate;
+}
+
+/* 点击效果 */
+.pear.active .speech-bubble-bg {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.pear.active .speech-bubble-pointer {
+    border-top-color: var(--accent-color);
+    border-right-color: var(--accent-color);
+}
+
+/* 漂浮动画 */
+@keyframes bubbleFloat {
+
+    0%,
+    100% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 8px));
+    }
+}
+
+/* 脉动动画 */
+@keyframes bubblePulse {
+    from {
+        transform: translateY(-50%) scale(1);
+    }
+
+    to {
+        transform: translateY(-50%) scale(1.1);
+    }
+}
