@@ -20,7 +20,7 @@ function pauseAllVideos() {
     // 暂停主视频
     const mainVideo = document.querySelector('.video video');
     if (mainVideo) mainVideo.pause();
-    
+
     // 暂停所有内容视频
     document.querySelectorAll('.tab-content video').forEach(video => {
         video.pause();
@@ -238,13 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const pear = document.getElementById("pear");
     const audio = pear.querySelector("audio");
-    
+
     pear.addEventListener("click", () => {
-        if (audio.paused) {  // 检查是否处于暂停状态
-            audio.play();    // 如果是暂停状态就播放
-        } else {
-            audio.pause();   // 否则暂停（注意是函数调用）
-        }
+        toggleAudio("./assets/audio/冻梨.mp3",audio)
     });
 
 });
+
